@@ -1,0 +1,46 @@
+/* You can add global styles to this file, and also import other style files */
+
+// GLOBAL variables
+$site-black: #141414; // eerie black
+$site-white: #ebe5f2; // lavender web
+$site-gray: #808080; // gray web
+$site-red: #a70000; // rufous
+$site-blue: #005891; // lapis lazuli
+$site-green: #338949; // spanish green
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+
+  .theme-dark {
+    background-color: $site-black;
+    color: $site-white;
+
+    a {
+      background-color: $site-black;
+      color: $site-white;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+      color: $site-blue !important;
+    }
+  }
+
+  .theme-light {
+    background-color: $site-white;
+    color: $site-black;
+
+    a {
+      background-color: $site-white;
+      color: $site-black;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+      color: $site-blue !important;
+    }
+  }
+}

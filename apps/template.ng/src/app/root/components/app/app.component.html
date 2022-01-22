@@ -1,0 +1,105 @@
+<div [ngClass]="{ 'theme-light': isLightTheme(), 'theme-dark': isDarkTheme() }">
+  <div class="container">
+    <div class="something">
+      <!-- header -->
+      <div class="row template-header">
+        <div class="col-md-12">
+          <div class="float-start">
+            <h3>
+              <b><a href="/">template.ng</a></b>
+            </h3>
+          </div>
+
+          <div>
+            <!-- add some more...maybe a component? -->
+          </div>
+
+          <div class="float-end">
+            <h3>
+              <!-- cookies 🍪 -->
+              <!-- TODO: Add cookie notice -->
+              <fa-icon
+                class="icon"
+                [icon]="getCookieIcon()"
+                (click)="toggleCookies()"
+              ></fa-icon>
+
+              <!-- theme icon -->
+              <fa-icon
+                class="icon"
+                [icon]="getThemeIcon()"
+                (click)="toggleTheme()"
+              ></fa-icon>
+
+              <!-- github icon -->
+              <!-- change this to github project -->
+              <a href="https:/github.com/chrwalte/template.ng"
+                ><fa-icon class="icon" [icon]="faGitHub"></fa-icon
+              ></a>
+            </h3>
+          </div>
+        </div>
+
+        <hr />
+      </div>
+
+      <!-- body -->
+      <div class="row">
+        <!-- left -->
+        <div class="col-2">
+          <!-- add some more...maybe a component? -->
+          <!-- maybe a router outlet? -->
+          <router-outlet name="right-column"></router-outlet>
+        </div>
+        <!-- center -->
+        <div class="col-8">
+          <!-- add some more...maybe a component? -->
+          <!-- maybe a router outlet (with the default 'primary' outlet name)? -->
+          <router-outlet></router-outlet>
+        </div>
+        <!-- right -->
+        <div class="col-2">
+          <!-- add some more...maybe a component? -->
+          <!-- maybe a router outlet? -->
+          <router-outlet name="left-column"></router-outlet>
+        </div>
+      </div>
+
+      <!-- footer -->
+      <div class="row template-footer">
+        <hr />
+
+        <!-- copyright -->
+        <div>
+          <h6 class="text-center">
+            <b><a href="/copyright">2022 &copy; template.ng</a></b>
+          </h6>
+        </div>
+
+        <!-- environment information -->
+        <div>
+          <div class="float-end small">
+            <span [hidden]="hideEnvironmentInformation">
+              <fa-icon class="small-icon" [icon]="faServer"></fa-icon>
+              environment: {{ getEnvironmentName() }}
+            </span>
+
+            <span>
+              <fa-icon
+                class="small-icon"
+                [icon]="faCodeBranch"
+                (click)="toggleEnvironmentInformation()"
+              ></fa-icon>
+              <span [hidden]="hideEnvironmentInformation">version</span>
+              {{ getVersion() }}
+            </span>
+          </div>
+        </div>
+
+        <div>
+          <!-- add some more...maybe a component? -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

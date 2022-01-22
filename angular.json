@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "template.ng": "apps/template.ng",
+    "template.ng-e2e": "apps/template.ng-e2e"
+  }
+}
